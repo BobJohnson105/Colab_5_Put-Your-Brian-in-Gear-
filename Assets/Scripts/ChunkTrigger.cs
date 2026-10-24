@@ -1,16 +1,27 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ChunkTrigger : MonoBehaviour
 {
     public GameObject chunk;
+    [SerializeField] private GameObject newChunk;
+    [SerializeField] private GameObject lastChunk;
 
-
-
+    private void Start()
+    {
+        newChunk = null;
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Trigger"))
         {
-            Instantiate(chunk, new Vector3(0, 0, 70), Quaternion.identity);
+            if (newChunk)
+            {
+                Destroy(lastChunk);
+            }
+            lastChunk = other.gameObject.transform.parent.gameObject;
+            newChunk = Instantiate(chunk, new Vector3(-25, 0, 350), Quaternion.identity);
+           
         }
     }
 
