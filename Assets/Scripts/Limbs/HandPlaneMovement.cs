@@ -8,7 +8,7 @@ public class HandPlaneMovement : MonoBehaviour
     public InputAction zyMovement;
     public InputAction depthChoice;
 
-
+    public int axis;
     private ConstantForce force;
 
     private float xValue;
