@@ -973,6 +973,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6805962266664712198}
   - component: {fileID: 28731347902938467}
+  - component: {fileID: -3524970090588713180}
   m_Layer: 0
   m_Name: Arm L
   m_TagString: Untagged
@@ -1095,6 +1096,36 @@ MonoBehaviour:
   axis: 0
   extremityConstForce: {fileID: 3172324886133315028}
   depthChoiceValue: 0
+--- !u!114 &-3524970090588713180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6704947657638305200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4eb32dd1d32677847a7218ab0424d0c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GrabController
+  grabInput:
+    m_Name: Grab Input
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 9c61dff2-2199-41d6-859e-06cd8de36981
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: a403b4c7-737e-4649-96ca-37d4cbfb9e70
+      m_Path: <Keyboard>/e
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Grab Input
+      m_Flags: 0
+    m_Flags: 0
+  handPos: {fileID: 0}
 --- !u!1 &8535136155324149356
 GameObject:
   m_ObjectHideFlags: 0
