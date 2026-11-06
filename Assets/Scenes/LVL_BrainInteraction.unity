@@ -705,7 +705,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BrainSection
   brainPartName: Left Arm
   moveUpAmount: 0.1
-  moveSpeed: 4
+  moveSpeed: 2
 --- !u!64 &752747025
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1076,7 +1076,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BrainSection
   brainPartName: Right Arm
   moveUpAmount: 0.1
-  moveSpeed: 4
+  moveSpeed: 2
 --- !u!64 &1428970946
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1205,7 +1205,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BrainSection
   brainPartName: Right Leg
   moveUpAmount: 0.1
-  moveSpeed: 4
+  moveSpeed: 2
 --- !u!64 &1628880118
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1656,7 +1656,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BrainSection
   brainPartName: Speech
   moveUpAmount: 0.1
-  moveSpeed: 4
+  moveSpeed: 2
 --- !u!64 &2009393188
 MeshCollider:
   m_ObjectHideFlags: 0
