@@ -673,7 +673,7 @@ MonoBehaviour:
   chunk: {fileID: 5706157967855717967, guid: 9bf9155ff4cbd2748a48363d2ebccb09, type: 3}
   newChunk: {fileID: 0}
   lastChunk: {fileID: 0}
-  eventSys: {fileID: 0}
+  eventSys: {fileID: 835766547}
 --- !u!135 &891558788
 SphereCollider:
   m_ObjectHideFlags: 0

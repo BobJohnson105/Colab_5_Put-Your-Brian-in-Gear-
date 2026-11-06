@@ -37,11 +37,13 @@ public class BrainSection : MonoBehaviour
     private void OnMouseEnter()
     {
         isHovered = true;
+        Debug.Log("MouseEntered"+gameObject.name);
     }
 
     private void OnMouseExit()
     {
         isHovered = false;
+        Debug.Log("Mouseexit" + gameObject.name);
     }
 
     private void OnMouseDown()
