@@ -155,7 +155,6 @@ GameObject:
   - component: {fileID: 7537868601623369726}
   - component: {fileID: 2608096845169074947}
   - component: {fileID: 1958699277314714913}
-  - component: {fileID: 6638598789089111121}
   - component: {fileID: 7758097050815591704}
   m_Layer: 0
   m_Name: Foot
@@ -377,103 +376,6 @@ ConfigurableJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!114 &6638598789089111121
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4439093602950768840}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd973f73461fb934ab2b67570e0bd92e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::HandPlaneMovement
-  xMovement:
-    m_Name: X Movement
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: e844f129-4587-4135-a07f-cc3ce998fbb0
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: Keyboard
-      m_Id: ab332d52-934a-4817-acfe-be2a181d471d
-      m_Path: 1DAxis
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: X Movement
-      m_Flags: 4
-    - m_Name: negative
-      m_Id: f9525de6-8498-44e4-8018-544c2f2072ba
-      m_Path: <Keyboard>/a
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: X Movement
-      m_Flags: 8
-    - m_Name: positive
-      m_Id: 355a7d84-0aba-4e74-bd84-bb0575279db6
-      m_Path: <Keyboard>/d
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: X Movement
-      m_Flags: 8
-    m_Flags: 0
-  zyMovement:
-    m_Name: Zy Movement
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: f5a6578e-8f7c-4408-b6b4-0560b1822e22
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: Keyboard
-      m_Id: 7aa4e2e9-896a-4b51-a399-9c60af68d04f
-      m_Path: 1DAxis
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Zy Movement
-      m_Flags: 4
-    - m_Name: negative
-      m_Id: 1400ffc6-992e-439b-8d57-369822f2d213
-      m_Path: <Keyboard>/s
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Zy Movement
-      m_Flags: 8
-    - m_Name: positive
-      m_Id: 991bb18e-538d-4df5-b7e9-1ef7628e2b30
-      m_Path: <Keyboard>/w
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Zy Movement
-      m_Flags: 8
-    m_Flags: 0
-  depthChoice:
-    m_Name: Depth Choice
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: dd25502f-40db-43a7-a814-e9eb2ab98dc7
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: df9b8225-e024-4619-8884-19b332799994
-      m_Path: <Keyboard>/space
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Depth Choice
-      m_Flags: 0
-    m_Flags: 0
-  axis: 0
-  depthChoiceValue: 0
 --- !u!136 &7758097050815591704
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -998,6 +900,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5480343071188947022}
+  - component: {fileID: 1008155968075805638}
   m_Layer: 0
   m_Name: Leg
   m_TagString: Untagged
@@ -1021,3 +924,102 @@ Transform:
   - {fileID: 2187452159597836355}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1008155968075805638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8055240018098160035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd973f73461fb934ab2b67570e0bd92e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HandPlaneMovement
+  isPossessed: 0
+  xMovement:
+    m_Name: X Movement
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: e844f129-4587-4135-a07f-cc3ce998fbb0
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: Keyboard
+      m_Id: ab332d52-934a-4817-acfe-be2a181d471d
+      m_Path: 1DAxis
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: X Movement
+      m_Flags: 4
+    - m_Name: negative
+      m_Id: f9525de6-8498-44e4-8018-544c2f2072ba
+      m_Path: <Keyboard>/a
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: X Movement
+      m_Flags: 8
+    - m_Name: positive
+      m_Id: 355a7d84-0aba-4e74-bd84-bb0575279db6
+      m_Path: <Keyboard>/d
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: X Movement
+      m_Flags: 8
+    m_Flags: 0
+  zyMovement:
+    m_Name: Zy Movement
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: f5a6578e-8f7c-4408-b6b4-0560b1822e22
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: Keyboard
+      m_Id: 7aa4e2e9-896a-4b51-a399-9c60af68d04f
+      m_Path: 1DAxis
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Zy Movement
+      m_Flags: 4
+    - m_Name: negative
+      m_Id: 1400ffc6-992e-439b-8d57-369822f2d213
+      m_Path: <Keyboard>/s
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Zy Movement
+      m_Flags: 8
+    - m_Name: positive
+      m_Id: 991bb18e-538d-4df5-b7e9-1ef7628e2b30
+      m_Path: <Keyboard>/w
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Zy Movement
+      m_Flags: 8
+    m_Flags: 0
+  depthChoice:
+    m_Name: Depth Choice
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: dd25502f-40db-43a7-a814-e9eb2ab98dc7
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: df9b8225-e024-4619-8884-19b332799994
+      m_Path: <Keyboard>/space
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Depth Choice
+      m_Flags: 0
+    m_Flags: 0
+  axis: 0
+  extremityConstForce: {fileID: 2608096845169074947}
+  depthChoiceValue: 0

@@ -2,14 +2,17 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 
-public class HandPlaneMovement : MonoBehaviour
+public class LimbPlaneMovement : MonoBehaviour
 {
+    public bool isPossessed;
+
+
     public InputAction xMovement;
     public InputAction zyMovement;
     public InputAction depthChoice;
 
     public int axis;
-    private ConstantForce force;
+    public ConstantForce extremityConstForce;
 
     private float xValue;
     private float zyValue;
@@ -17,7 +20,7 @@ public class HandPlaneMovement : MonoBehaviour
 
     private void Start()
     {
-        force = GetComponent<ConstantForce>();
+        
     }
 
     private void OnEnable()
@@ -36,17 +39,20 @@ public class HandPlaneMovement : MonoBehaviour
 
     private void Update()
     {
-        xValue = xMovement.ReadValue<float>() * 20;
-        zyValue = zyMovement.ReadValue<float>() * 20;
-        depthChoiceValue = depthChoice.ReadValue<float>();
+        if (isPossessed)
+        {
+            xValue = xMovement.ReadValue<float>() * 20;
+            zyValue = zyMovement.ReadValue<float>() * 20;
+            depthChoiceValue = depthChoice.ReadValue<float>();
 
-        if (depthChoiceValue == 1)
-        {
-            force.force = new Vector3(xValue, 0, zyValue);
-        }
-        else
-        {
-            force.force = new Vector3(xValue, zyValue, 0);
+            if (depthChoiceValue == 1)
+            {
+                extremityConstForce.force = new Vector3(xValue, 0, zyValue);
+            }
+            else
+            {
+                extremityConstForce.force = new Vector3(xValue, zyValue, 0);
+            }
         }
             
     }
