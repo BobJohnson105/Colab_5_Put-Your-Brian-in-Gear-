@@ -1,10 +1,13 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
+using TMPro;
 
 public class DialogueOptionScript : MonoBehaviour,  IPointerClickHandler, IPointerEnterHandler
 {
     private float launchForce = 0.2f;
     private float tumbleForce = 0.1f;
+
+    private DialogueDisplayManager dialogueDisplayManagerScript;
 
     private Rigidbody rb;
 
@@ -23,12 +26,15 @@ public class DialogueOptionScript : MonoBehaviour,  IPointerClickHandler, IPoint
         PushBox();
 
         currentWordNeeded = "Hi Officer";
+
+        dialogueDisplayManagerScript = FindAnyObjectByType<DialogueDisplayManager>();
     }
 
     public void OnPointerClick(PointerEventData eventData)
     {
         Destroy(gameObject);
         CheckIsRightWord();
+        dialogueDisplayManagerScript.UpdateSpeechText(wordDataRef.assignedWord);
     }
 
     public void OnPointerEnter(PointerEventData eventData)

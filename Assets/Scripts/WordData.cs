@@ -4,6 +4,7 @@ using UnityEngine;
 public class WordData : ScriptableObject
 {
     public string assignedWord;
-    
+    public int orderInSentance;
+    public bool isHumanWord;
     
 }
