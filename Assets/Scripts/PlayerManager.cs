@@ -6,6 +6,8 @@ public class PlayerManager : MonoBehaviour
 
     public static PlayerManager instance { get; private set; }
     public float speed;
+    public float yaw;
+    public float yaw_speed;
 
     private void Awake()
     {
@@ -18,6 +20,12 @@ public class PlayerManager : MonoBehaviour
         {
             instance = this;
         }
+    }
+
+    private void Update()
+    {
+        yaw = Mathf.Clamp(yaw,-1,1);
+        transform.position += new Vector3(yaw * yaw_speed,0, 0) * Time.deltaTime;
     }
 
 
