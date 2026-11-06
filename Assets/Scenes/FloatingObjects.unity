@@ -611,7 +611,6 @@ GameObject:
   - component: {fileID: 219155113}
   - component: {fileID: 219155112}
   - component: {fileID: 219155111}
-  - component: {fileID: 219155110}
   m_Layer: 0
   m_Name: Box_1 (3)
   m_TagString: Untagged
@@ -619,20 +618,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &219155110
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 219155109}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0d8c2c653031a9458282e50e7fa4263, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ZeroGDrift
-  launchForce: 5
-  tumbleForce: 2
 --- !u!114 &219155111
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -645,6 +630,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f6b32b2745239048a35c3a87b08478e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueOptionScript
+  wordDataRef: {fileID: 11400000, guid: fbe3a8cb237f21648837b4cd56f4619b, type: 2}
 --- !u!54 &219155112
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1820,7 +1806,6 @@ GameObject:
   - component: {fileID: 1206109945}
   - component: {fileID: 1206109944}
   - component: {fileID: 1206109943}
-  - component: {fileID: 1206109942}
   m_Layer: 0
   m_Name: Box_1 (4)
   m_TagString: Untagged
@@ -1828,20 +1813,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1206109942
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1206109941}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0d8c2c653031a9458282e50e7fa4263, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ZeroGDrift
-  launchForce: 5
-  tumbleForce: 2
 --- !u!114 &1206109943
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1854,6 +1825,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f6b32b2745239048a35c3a87b08478e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueOptionScript
+  wordDataRef: {fileID: 11400000, guid: fbe3a8cb237f21648837b4cd56f4619b, type: 2}
 --- !u!54 &1206109944
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3041,9 +3013,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Hi Officer
-
-'
+  m_text: I am Alien
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3181,7 +3151,6 @@ GameObject:
   - component: {fileID: 1542380623}
   - component: {fileID: 1542380622}
   - component: {fileID: 1542380621}
-  - component: {fileID: 1542380620}
   m_Layer: 0
   m_Name: Box_1 (1)
   m_TagString: Untagged
@@ -3189,20 +3158,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1542380620
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1542380619}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0d8c2c653031a9458282e50e7fa4263, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ZeroGDrift
-  launchForce: 5
-  tumbleForce: 2
 --- !u!114 &1542380621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3215,6 +3170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f6b32b2745239048a35c3a87b08478e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueOptionScript
+  wordDataRef: {fileID: 11400000, guid: 4ffae91dd42d6a947a76ad5764cf394a, type: 2}
 --- !u!54 &1542380622
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4057,9 +4013,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Hi Officer
-
-'
+  m_text: I am Alien
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4677,7 +4631,6 @@ GameObject:
   - component: {fileID: 1808304658}
   - component: {fileID: 1808304657}
   - component: {fileID: 1808304663}
-  - component: {fileID: 1808304662}
   m_Layer: 0
   m_Name: Box_1
   m_TagString: Untagged
@@ -4809,20 +4762,6 @@ Transform:
   - {fileID: 1856765347}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1808304662
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1808304656}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0d8c2c653031a9458282e50e7fa4263, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ZeroGDrift
-  launchForce: 5
-  tumbleForce: 2
 --- !u!114 &1808304663
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4835,6 +4774,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f6b32b2745239048a35c3a87b08478e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueOptionScript
+  wordDataRef: {fileID: 11400000, guid: fbe3a8cb237f21648837b4cd56f4619b, type: 2}
 --- !u!1 &1856765346
 GameObject:
   m_ObjectHideFlags: 0
@@ -5258,9 +5198,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Hi Officer
-
-'
+  m_text: I am Alien
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5441,9 +5379,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Hi Officer
-
-'
+  m_text: I am Alien
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5891,7 +5827,6 @@ GameObject:
   - component: {fileID: 2124546653}
   - component: {fileID: 2124546652}
   - component: {fileID: 2124546651}
-  - component: {fileID: 2124546650}
   m_Layer: 0
   m_Name: Box_1 (2)
   m_TagString: Untagged
@@ -5899,20 +5834,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2124546650
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2124546649}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0d8c2c653031a9458282e50e7fa4263, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ZeroGDrift
-  launchForce: 5
-  tumbleForce: 2
 --- !u!114 &2124546651
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5925,6 +5846,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f6b32b2745239048a35c3a87b08478e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueOptionScript
+  wordDataRef: {fileID: 11400000, guid: fbe3a8cb237f21648837b4cd56f4619b, type: 2}
 --- !u!54 &2124546652
 Rigidbody:
   m_ObjectHideFlags: 0

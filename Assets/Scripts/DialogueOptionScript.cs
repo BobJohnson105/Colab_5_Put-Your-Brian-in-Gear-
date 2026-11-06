@@ -8,6 +8,9 @@ public class DialogueOptionScript : MonoBehaviour,  IPointerClickHandler, IPoint
 
     private Rigidbody rb;
 
+    public WordData wordDataRef;
+    private string currentWordNeeded;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -18,18 +21,20 @@ public class DialogueOptionScript : MonoBehaviour,  IPointerClickHandler, IPoint
     void Start()
     {
         PushBox();
+
+        currentWordNeeded = "Hi Officer";
     }
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        Debug.Log("ClickedOn");
+        Destroy(gameObject);
+        CheckIsRightWord();
     }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
         launchForce = 2f;
         tumbleForce = 1f;
-        Debug.Log("Enter");
         PushBox();
     }
    
@@ -44,6 +49,19 @@ public class DialogueOptionScript : MonoBehaviour,  IPointerClickHandler, IPoint
             // random rotational spin
             Vector3 randomTorque = Random.insideUnitSphere * tumbleForce;
             rb.AddTorque(randomTorque, ForceMode.Impulse);
+        }
+        
+    }
+
+    private void CheckIsRightWord()
+    {
+        if (wordDataRef.assignedWord == currentWordNeeded)
+        {
+            Debug.Log("Correct word");
+        }
+        else
+        {
+            Debug.Log("Incorrect Word");
         }
     }
 
