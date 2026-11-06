@@ -594,6 +594,7 @@ MonoBehaviour:
   baseEventProbabilty: 0.05
   maxEventWaitTime: 30
   debugToggle: 1
+  debugEventsToggle: 0
 --- !u!4 &835766548
 Transform:
   m_ObjectHideFlags: 0
@@ -672,7 +673,7 @@ MonoBehaviour:
   chunk: {fileID: 5706157967855717967, guid: 9bf9155ff4cbd2748a48363d2ebccb09, type: 3}
   newChunk: {fileID: 0}
   lastChunk: {fileID: 0}
-  eventSys: {fileID: 835766547}
+  eventSys: {fileID: 0}
 --- !u!135 &891558788
 SphereCollider:
   m_ObjectHideFlags: 0
