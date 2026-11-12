@@ -7,6 +7,7 @@ public class GrabController : MonoBehaviour
     public InputAction grabInput;
 
     public Transform handPos;
+    public Transform holdTransform;
 
     public LimbPlaneMovement limbMover;
 
@@ -47,14 +48,16 @@ public class GrabController : MonoBehaviour
             if (col.GetComponent<MoveObject>()) // Can the object be grabbed
             {
               
-                col.GetComponent<MoveObject>().Grabbed(handPos);   
+                col.GetComponent<MoveObject>().Grabbed(holdTransform);  
+
+                Debug.Log("TryHold"); 
 
             }
             else if (col.GetComponent<GrabObject>())
             {
                 Vector3 closestPoint = col.ClosestPoint(handPos.position);
 
-                StartCoroutine(MoveTowardsObject(closestPoint));
+                //StartCoroutine(MoveTowardsObject(closestPoint));
 
                 Debug.Log(closestPoint);
 
