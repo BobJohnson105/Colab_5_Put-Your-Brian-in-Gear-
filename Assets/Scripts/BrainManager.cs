@@ -7,8 +7,11 @@ public class BrainManager : MonoBehaviour
    public bool rightLegSelected;
    public bool speechSelected;
 
+    public LimbPlaneMovement rightArm;
+    public LimbPlaneMovement leftArm;
 
-   public void ToggleSelection(string brainPartName)
+
+    public void ToggleSelection(string brainPartName)
    {
        
        bool isSelected = false;
@@ -18,11 +21,13 @@ public class BrainManager : MonoBehaviour
             case "Left Arm":
             leftArmSelected = !leftArmSelected;
             isSelected = leftArmSelected;
+            leftArm.isPossessed = !leftArm.isPossessed;
             break;
 
             case "Right Arm":
                 rightArmSelected = !rightArmSelected;
                 isSelected = rightArmSelected;
+                rightArm.isPossessed = !rightArm.isPossessed;
                 break;
 
             case "Right Leg":
@@ -47,6 +52,7 @@ public class BrainManager : MonoBehaviour
         else
         {
             Debug.Log(brainPartName + "Part deselected");
+
         }
 
    }
