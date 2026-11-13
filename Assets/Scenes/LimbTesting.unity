@@ -1078,6 +1078,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Arm R
       objectReference: {fileID: 0}
+    - target: {fileID: 9078863068617920103, guid: 7f27b0ff907546445adb078912a1daa7, type: 3}
+      propertyPath: isPossessed
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1099,6 +1103,10 @@ PrefabInstance:
       propertyPath: limbMover
       value: 
       objectReference: {fileID: 1084574462}
+    - target: {fileID: -3524970090588713180, guid: 7a3e98c58b742304498002d7e4513184, type: 3}
+      propertyPath: holdTransform
+      value: 
+      objectReference: {fileID: 407477893}
     - target: {fileID: 28731347902938467, guid: 7a3e98c58b742304498002d7e4513184, type: 3}
       propertyPath: isPossessed
       value: 1
