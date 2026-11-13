@@ -6,16 +6,21 @@ public class MoveObject : MonoBehaviour
 
     private bool isGrabbed = false;
 
+    //public Collider myCollider;
+
     public void ToggleGrab(Transform newParent)
     {
-        transform.SetParent(newParent);
-        isGrabbed = true; 
-    }
+        if (isGrabbed)
+        {
+            transform.SetParent(null);
+            isGrabbed = false;
+        }
+        else
+        {
+            transform.SetParent(newParent);
+            isGrabbed = true;
+        }
 
-    public void UnGrabbed()
-    {
-        transform.SetParent(null);
-        isGrabbed = false;
     }
 
     private void Update()
@@ -23,6 +28,7 @@ public class MoveObject : MonoBehaviour
         if (isGrabbed)
         {
             transform.localPosition = Vector3.zero;
+            transform.localRotation = Quaternion.identity;
         }
     }
 }

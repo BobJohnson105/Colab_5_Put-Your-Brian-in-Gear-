@@ -12,6 +12,7 @@ public class GrabController : MonoBehaviour
     public LimbPlaneMovement limbMover;
 
     private float grabValue;
+    private bool hasGrabbed = false;
 
     private void OnEnable()
     {
@@ -29,7 +30,19 @@ public class GrabController : MonoBehaviour
 
         if (grabValue != 0)
         {
-            TryGrab();
+            if (!hasGrabbed)
+            {
+                TryGrab();
+                hasGrabbed = true;
+            }
+            
+        }
+        else
+        {
+            if (hasGrabbed)
+            {
+                hasGrabbed = false;
+            }
         }
     }
 
@@ -48,7 +61,7 @@ public class GrabController : MonoBehaviour
             if (col.GetComponent<MoveObject>()) // Can the object be grabbed
             {
               
-                col.GetComponent<MoveObject>().Grabbed(holdTransform);  
+                col.GetComponent<MoveObject>().ToggleGrab(holdTransform);  
 
                 Debug.Log("TryHold"); 
 
