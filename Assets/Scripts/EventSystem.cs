@@ -3,10 +3,11 @@ using UnityEngine;
 
 public class EventSystem : MonoBehaviour {
     [Header("Chunks")]
-    [SerializeField] private ChunkData[] baseChunkArray;
-    [SerializeField] private ChunkData[] eventChunkArray;
-    private float[] baseChunkWeights;
-    private float[] eventChunkWeights;
+    [SerializeField] private ChunkSet[] baseSetArray;
+    [SerializeField] private ChunkSet[] eventSetArray;
+    private ChunkSet selectedSet;
+    private float[] baseSetWeights;
+    private float[] eventSetWeights;
     [Header("Timers & Delays")]
     [SerializeField] private float startDelay;
     [SerializeField] private float eventDelay;
@@ -22,16 +23,18 @@ public class EventSystem : MonoBehaviour {
     private float waitTime;
     private bool toggleEvents;
     private bool eventActive;
+    private int chunkIndex;
+    private int chunkSetLength;
 
     void Start() {
         StartCoroutine(EventDelayTimer(startDelay));
-        baseChunkWeights = new float[baseChunkArray.Length];
-        eventChunkWeights = new float[eventChunkArray.Length];
-        for(int X = 0; X < baseChunkWeights.Length; X++) {
-            baseChunkWeights[X] = baseChunkArray[X].ChunkProbabilty;
+        baseSetWeights = new float[baseSetArray.Length];
+        eventSetWeights = new float[eventSetArray.Length];
+        for(int X = 0; X < baseSetArray.Length; X++) {
+            baseSetWeights[X] = baseSetArray[X].chunkSetProbability;
         }
-        for(int X = 0; X < eventChunkWeights.Length; X++) {
-            eventChunkWeights[X] = eventChunkArray[X].ChunkProbabilty;
+        for(int X = 0; X < eventSetWeights.Length; X++) {
+            eventSetWeights[X] = eventSetArray[X].chunkSetProbability;
         }
     }
 
@@ -45,32 +48,50 @@ public class EventSystem : MonoBehaviour {
     }
 
     public GameObject GetNextChunk() {
-        int SelectedChunk = 0;
-        if(toggleEvents && !eventActive) { //Check if next chunk will be event.
+        int SelectedChunk;
+        if(selectedSet != null && chunkIndex < chunkSetLength - 1) {
+            chunkIndex++;
+            if(debugToggle) {
+                Debug.Log("Spawning Chunk from set: "+selectedSet.chunks[chunkIndex].chunkName);
+            }
+            return selectedSet.chunks[chunkIndex].chunk;
+        } else if(toggleEvents && !eventActive) { //Check if next chunk will be event.
             eventProbabilty = Mathf.Lerp(baseEventProbabilty, 1.0f, waitTime);
             if(Random.value < eventProbabilty) {
                 eventProbabilty = 0.0f;
                 toggleEvents = false;
                 //eventActive = true;
                 EventDelayTimer(eventDelay);
-                SelectedChunk = GetRandonChunk(eventChunkWeights);
+                SelectedChunk = GetRandonChunk(eventSetWeights);
+                selectedSet = eventSetArray[SelectedChunk];
+                chunkIndex = 0;
+                chunkSetLength = selectedSet.chunks.Length;
                 if(debugToggle) {
-                    Debug.Log("Spawning Chunk: "+eventChunkArray[SelectedChunk].ChunkName);
+                    Debug.Log("New Chunk Set: "+selectedSet.chunkSetName);
+                    Debug.Log("Spawning Chunk from set: "+selectedSet.chunks[0].chunkName);
                 }
-                return eventChunkArray[SelectedChunk].Chunk; //EVENT chunk
+                return selectedSet.chunks[chunkIndex].chunk; //EVENT chunk
             } else {
-                SelectedChunk = GetRandonChunk(baseChunkWeights);
+                SelectedChunk = GetRandonChunk(baseSetWeights);
+                selectedSet = baseSetArray[SelectedChunk];
+                chunkIndex = 0;
+                chunkSetLength = selectedSet.chunks.Length;
                 if(debugToggle) {
-                    Debug.Log("Spawning Chunk: "+baseChunkArray[SelectedChunk].ChunkName);
+                    Debug.Log("New Chunk Set: "+selectedSet.chunkSetName);
+                    Debug.Log("Spawning Chunk from set: "+selectedSet.chunks[0].chunkName);
                 }
-                return baseChunkArray[SelectedChunk].Chunk; //BASE chunk
+                return selectedSet.chunks[chunkIndex].chunk; //BASE chunk
             }
         } else {
-            SelectedChunk = GetRandonChunk(baseChunkWeights);
+            SelectedChunk = GetRandonChunk(baseSetWeights);
+            selectedSet = baseSetArray[SelectedChunk];
+            chunkIndex = 0;
+            chunkSetLength = selectedSet.chunks.Length;
             if(debugToggle) {
-                Debug.Log("Spawning Chunk: "+baseChunkArray[SelectedChunk].ChunkName);
+                Debug.Log("New Chunk Set: "+selectedSet.chunkSetName);
+                Debug.Log("Spawning Chunk from set: "+selectedSet.chunks[0].chunkName);
             }
-            return baseChunkArray[SelectedChunk].Chunk; //BASE chunk
+            return selectedSet.chunks[chunkIndex].chunk; //BASE chunk
         }
     }
 
