@@ -1,55 +1,82 @@
+using System;
 using UnityEngine;
 
 public class BrainManager : MonoBehaviour
 {
-   public bool leftArmSelected;
-   public bool rightArmSelected;
-   public bool rightLegSelected;
-   public bool speechSelected;
+    public bool leftArmSelected;
+    public bool rightArmSelected;
+    public bool rightLegSelected;
+    public bool speechSelected;
+
+    public LimbPlaneMovement leftArm;
+    public LimbPlaneMovement rightArm;
+    public LimbPlaneMovement leftLeg;
+    public LimbPlaneMovement rightLeg;
+
+    [SerializeField] private int limbsSelected;
 
 
-   public void ToggleSelection(string brainPartName)
-   {
-       
-       bool isSelected = false;
 
-       switch (brainPartName)
-       {
-            case "Left Arm":
-            leftArmSelected = !leftArmSelected;
-            isSelected = leftArmSelected;
-            break;
+    public void ToggleSelection(string brainPartName)
+    {
+        if (limbsSelected < 2)
+        {
+            bool isSelected = false;
 
-            case "Right Arm":
-                rightArmSelected = !rightArmSelected;
-                isSelected = rightArmSelected;
-                break;
+            switch (brainPartName)
+            {
+                case "Left Arm":
+                    leftArmSelected = !leftArmSelected;
+                    isSelected = leftArmSelected;
 
-            case "Right Leg":
-                rightLegSelected = !rightLegSelected;
-                isSelected = rightLegSelected;
-                break;
+                    leftArm.isPossessed = true;
 
-            case "Speech":
-                speechSelected = !speechSelected;
-                isSelected = speechSelected;
-                break;
+                    break;
 
-            default:
-                Debug.LogWarning("Umm, What is this section?:" + brainPartName);
-                break;
-       }
+                case "Right Arm":
+                    rightArmSelected = !rightArmSelected;
+                    isSelected = rightArmSelected;
+
+                    rightArm.isPossessed = true;
+
+                    break;
+
+                case "Right Leg":
+                    rightLegSelected = !rightLegSelected;
+                    isSelected = rightLegSelected;
+
+                    rightLeg.isPossessed = true;
+                    break;
+
+                case "Speech":
+                    speechSelected = !speechSelected;
+                    isSelected = speechSelected;
+
+                    leftLeg.isPossessed = true;
+
+                    break;
+
+                default:
+                    Debug.LogWarning("Umm, What is this section?:" + brainPartName);
+                    break;
+            }
+                
+            if (isSelected)
+            {
+                Debug.Log("Ahh that was clicky: " + brainPartName);
+
+                limbsSelected += 1;
+            }
+            else
+            {
+                Debug.Log(brainPartName + "Part deselected");
+
+                limbsSelected -= 1;
+            }
+        }
         
-        if (isSelected)
-        {
-            Debug.Log("Ahh that was clicky:" + brainPartName);
-        }
-        else
-        {
-            Debug.Log(brainPartName + "Part deselected");
-        }
 
-   }
+    }
     
     public void ClearSelections()
     {
@@ -57,6 +84,11 @@ public class BrainManager : MonoBehaviour
         rightArmSelected = false;
         rightLegSelected = false;
         speechSelected = false;
+
+        leftArm.isPossessed = false;
+        rightArm.isPossessed = false;
+        rightLeg.isPossessed = false;
+        leftLeg.isPossessed = false;
     }
 
 }
