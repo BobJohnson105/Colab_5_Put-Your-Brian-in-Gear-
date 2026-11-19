@@ -40,6 +40,7 @@ Transform:
   - {fileID: 4333117798317174573}
   - {fileID: 848344313631599339}
   - {fileID: 1837074173890587060}
+  - {fileID: 2156394052454349604}
   m_Father: {fileID: 2170707271214854688}
   m_LocalEulerAnglesHint: {x: -2.085, y: 193.69, z: 174.641}
 --- !u!33 &3269793292951120739
@@ -973,6 +974,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6805962266664712198}
   - component: {fileID: 28731347902938467}
+  - component: {fileID: -3524970090588713180}
   m_Layer: 0
   m_Name: Arm L
   m_TagString: Untagged
@@ -1008,7 +1010,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd973f73461fb934ab2b67570e0bd92e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HandPlaneMovement
-  isPossessed: 0
+  isPossessed: 1
   xMovement:
     m_Name: X Movement
     m_Type: 0
@@ -1095,6 +1097,38 @@ MonoBehaviour:
   axis: 0
   extremityConstForce: {fileID: 3172324886133315028}
   depthChoiceValue: 0
+--- !u!114 &-3524970090588713180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6704947657638305200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4eb32dd1d32677847a7218ab0424d0c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GrabController
+  grabInput:
+    m_Name: Grab Input
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 9c61dff2-2199-41d6-859e-06cd8de36981
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: a403b4c7-737e-4649-96ca-37d4cbfb9e70
+      m_Path: <Keyboard>/e
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Grab Input
+      m_Flags: 0
+    m_Flags: 0
+  handPos: {fileID: 2472329347712573943}
+  holdTransform: {fileID: 2156394052454349604}
+  limbMover: {fileID: 28731347902938467}
 --- !u!1 &8535136155324149356
 GameObject:
   m_ObjectHideFlags: 0
@@ -1596,3 +1630,34 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!1 &8808341687069448879
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2156394052454349604}
+  m_Layer: 0
+  m_Name: Hold Transform
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2156394052454349604
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8808341687069448879}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.791, y: 0.615, z: 0.289}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2472329347712573943}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
