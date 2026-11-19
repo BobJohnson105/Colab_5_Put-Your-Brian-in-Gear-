@@ -1,4 +1,5 @@
 using System.Collections;
+using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -13,6 +14,8 @@ public class GrabController : MonoBehaviour
 
     private float grabValue;
     private bool hasGrabbed = false;
+
+    private ConfigurableJoint objectGrabJoint;
 
     private void OnEnable()
     {
@@ -48,7 +51,7 @@ public class GrabController : MonoBehaviour
 
     private void TryGrab()
     {
-        Collider[] grabCheck = Physics.OverlapSphere(handPos.position, 1.5f); // Check for grabbable objects around the hand
+        Collider[] grabCheck = Physics.OverlapSphere(handPos.position, 1f); // Check for grabbable objects around the hand
 
        
 
@@ -72,6 +75,16 @@ public class GrabController : MonoBehaviour
 
                 //StartCoroutine(MoveTowardsObject(closestPoint));
 
+                if (objectGrabJoint == null)
+                {
+                    CreateObjectGrabJoint(col.gameObject);
+                }
+                else
+                {
+                    DestroyObjectGrabJoint();
+                }
+
+
                 Debug.Log(closestPoint);
 
                 Debug.Log("GrabObject");
@@ -91,9 +104,29 @@ public class GrabController : MonoBehaviour
         
     }
 
+    private void CreateObjectGrabJoint(GameObject grabbedObject)
+    {
+        objectGrabJoint = handPos.gameObject.AddComponent<ConfigurableJoint>();
+
+        objectGrabJoint.xMotion = ConfigurableJointMotion.Locked;
+        objectGrabJoint.yMotion = ConfigurableJointMotion.Locked;
+        objectGrabJoint.zMotion = ConfigurableJointMotion.Locked;
+
+        objectGrabJoint.connectedBody = grabbedObject.GetComponent<Rigidbody>();
+    }
+
+    private void DestroyObjectGrabJoint()
+    {
+        if (objectGrabJoint != null)
+        {
+            Destroy(objectGrabJoint);
+            objectGrabJoint = null;
+        }
+    }
+
     private void OnDrawGizmos()
     {
-        Gizmos.DrawSphere(handPos.position, 1.5f);
+        Gizmos.DrawSphere(handPos.position, 1f);
 
     }
 }
