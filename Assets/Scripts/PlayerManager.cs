@@ -7,6 +7,11 @@ public class PlayerManager : MonoBehaviour
     public static PlayerManager instance { get; private set; }
     public float speed;
 
+    public float yaw;
+    public float yawSpeed;
+
+    public SteeringWheel steeringWheel;
+
     private void Awake()
     {
         //Check there is only one static reference in the scene
@@ -18,6 +23,13 @@ public class PlayerManager : MonoBehaviour
         {
             instance = this;
         }
+    }
+
+    private void Update()
+    {
+        yaw = Mathf.Clamp(yaw, -1, 1);
+        yaw = steeringWheel.steeringValue;
+        transform.position += new Vector3(yaw * yawSpeed, 0, 0) * Time.deltaTime;
     }
 
 
