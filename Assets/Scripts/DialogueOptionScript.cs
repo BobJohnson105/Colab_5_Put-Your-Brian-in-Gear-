@@ -1,9 +1,13 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 using TMPro;
+using System.Collections;
 
 public class DialogueOptionScript : MonoBehaviour,  IPointerClickHandler, IPointerEnterHandler
 {
+    public ParticleSystem tenticleSystem;
+    public GameObject optionBox;
+    
     private float launchForce = 0.2f;
     private float tumbleForce = 0.1f;
 
@@ -32,18 +36,27 @@ public class DialogueOptionScript : MonoBehaviour,  IPointerClickHandler, IPoint
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        Destroy(gameObject);
+        tenticleSystem.Play();
+        Destroy(optionBox);
+        StartCoroutine("DestroyObject");
         CheckIsRightWord();
         dialogueDisplayManagerScript.UpdateSpeechText(wordDataRef.assignedWord);
     }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
+        Debug.Log("Hovering");
         launchForce = 2f;
-        tumbleForce = 1f;
+        tumbleForce = 0.5f;
         PushBox();
     }
-   
+
+    private IEnumerator DestroyObject()
+    {
+        yield return new WaitForSeconds(5);
+        Destroy(gameObject);
+    }
+
     private void PushBox()
     {
         if (rb != null)
@@ -56,6 +69,7 @@ public class DialogueOptionScript : MonoBehaviour,  IPointerClickHandler, IPoint
             Vector3 randomTorque = Random.insideUnitSphere * tumbleForce;
             rb.AddTorque(randomTorque, ForceMode.Impulse);
         }
+
         
     }
 
