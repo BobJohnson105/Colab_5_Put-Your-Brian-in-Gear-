@@ -1,8 +1,7 @@
 using UnityEngine;
 
-[System.Serializable]
-public class ChunkData {
-    public string ChunkName;
-    public GameObject Chunk;
-    public float ChunkProbabilty;
+[CreateAssetMenu(fileName = "New Chunk", menuName = "Chunks/Chunk")]
+public class ChunkData : ScriptableObject {
+    public string chunkName;
+    public GameObject chunk;
 }
