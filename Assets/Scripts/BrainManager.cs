@@ -19,61 +19,58 @@ public class BrainManager : MonoBehaviour
 
     public void ToggleSelection(string brainPartName)
     {
-        if (limbsSelected < 2)
+        bool isSelected = false;
+
+        switch (brainPartName)
         {
-            bool isSelected = false;
+            case "Left Arm":
+                leftArmSelected = !leftArmSelected;
+                isSelected = leftArmSelected;
 
-            switch (brainPartName)
-            {
-                case "Left Arm":
-                    leftArmSelected = !leftArmSelected;
-                    isSelected = leftArmSelected;
+                leftArm.isPossessed = !leftArm.isPossessed;
 
-                    leftArm.isPossessed = true;
+                break;
 
-                    break;
+            case "Right Arm":
+                rightArmSelected = !rightArmSelected;
+                isSelected = rightArmSelected;
 
-                case "Right Arm":
-                    rightArmSelected = !rightArmSelected;
-                    isSelected = rightArmSelected;
+                rightArm.isPossessed = !rightArm.isPossessed;
 
-                    rightArm.isPossessed = true;
+                break;
 
-                    break;
+            case "Right Leg":
+                rightLegSelected = !rightLegSelected;
+                isSelected = rightLegSelected;
 
-                case "Right Leg":
-                    rightLegSelected = !rightLegSelected;
-                    isSelected = rightLegSelected;
+                rightLeg.isPossessed = !rightLeg.isPossessed;
+                break;
 
-                    rightLeg.isPossessed = true;
-                    break;
+            case "Speech":
+                speechSelected = !speechSelected;
+                isSelected = speechSelected;
 
-                case "Speech":
-                    speechSelected = !speechSelected;
-                    isSelected = speechSelected;
 
-                    leftLeg.isPossessed = true;
+                break;
 
-                    break;
-
-                default:
-                    Debug.LogWarning("Umm, What is this section?:" + brainPartName);
-                    break;
-            }
-                
-            if (isSelected)
-            {
-                Debug.Log("Ahh that was clicky: " + brainPartName);
-
-                limbsSelected += 1;
-            }
-            else
-            {
-                Debug.Log(brainPartName + "Part deselected");
-
-                limbsSelected -= 1;
-            }
+            default:
+                Debug.LogWarning("Umm, What is this section?:" + brainPartName);
+                break;
         }
+                
+        if (isSelected)
+        {
+            Debug.Log("Ahh that was clicky: " + brainPartName);
+
+            limbsSelected += 1;
+        }
+        else
+        {
+            Debug.Log(brainPartName + "Part deselected");
+
+            limbsSelected -= 1;
+        }
+        
         
 
     }

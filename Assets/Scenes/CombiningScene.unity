@@ -578,6 +578,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b3ae8daa1158f5449a6a1c00fa26fc9c, type: 3}
+--- !u!114 &1045882531 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1008155968075805638, guid: b3ae8daa1158f5449a6a1c00fa26fc9c, type: 3}
+  m_PrefabInstance: {fileID: 1045882530}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd973f73461fb934ab2b67570e0bd92e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HandPlaneMovement
 --- !u!1 &1050464424
 GameObject:
   m_ObjectHideFlags: 0
@@ -761,6 +772,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b3ae8daa1158f5449a6a1c00fa26fc9c, type: 3}
+--- !u!114 &1053837947 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1008155968075805638, guid: b3ae8daa1158f5449a6a1c00fa26fc9c, type: 3}
+  m_PrefabInstance: {fileID: 1053837946}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd973f73461fb934ab2b67570e0bd92e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HandPlaneMovement
 --- !u!4 &1174967356 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5480343071188947022, guid: b3ae8daa1158f5449a6a1c00fa26fc9c, type: 3}
@@ -1490,6 +1512,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f27b0ff907546445adb078912a1daa7, type: 3}
+--- !u!114 &2590502477636394069 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9078863068617920103, guid: 7f27b0ff907546445adb078912a1daa7, type: 3}
+  m_PrefabInstance: {fileID: 2590502477636394068}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd973f73461fb934ab2b67570e0bd92e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HandPlaneMovement
 --- !u!222 &2620037115950715681
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1861,6 +1894,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1050464430}
     m_Modifications:
+    - target: {fileID: 28731347902938467, guid: 7a3e98c58b742304498002d7e4513184, type: 3}
+      propertyPath: isPossessed
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6704947657638305200, guid: 7a3e98c58b742304498002d7e4513184, type: 3}
       propertyPath: m_Name
       value: Arm L
@@ -1910,6 +1947,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a3e98c58b742304498002d7e4513184, type: 3}
+--- !u!114 &4722743646111227028 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 28731347902938467, guid: 7a3e98c58b742304498002d7e4513184, type: 3}
+  m_PrefabInstance: {fileID: 4722743646111227027}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd973f73461fb934ab2b67570e0bd92e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HandPlaneMovement
 --- !u!114 &4758104829084542944
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2033,6 +2081,11 @@ MonoBehaviour:
   rightArmSelected: 0
   rightLegSelected: 0
   speechSelected: 0
+  leftArm: {fileID: 4722743646111227028}
+  rightArm: {fileID: 2590502477636394069}
+  leftLeg: {fileID: 1045882531}
+  rightLeg: {fileID: 1053837947}
+  limbsSelected: 0
 --- !u!33 &5939426090141260369
 MeshFilter:
   m_ObjectHideFlags: 0
