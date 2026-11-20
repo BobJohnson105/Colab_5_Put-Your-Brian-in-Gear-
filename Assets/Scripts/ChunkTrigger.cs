@@ -6,6 +6,7 @@ public class ChunkTrigger : MonoBehaviour
     public GameObject chunk;
     [SerializeField] private GameObject newChunk;
     [SerializeField] private GameObject lastChunk;
+    public EventSystem eventSys;
 
     private void Start()
     {
@@ -20,7 +21,7 @@ public class ChunkTrigger : MonoBehaviour
                 Destroy(lastChunk);
             }
             lastChunk = other.gameObject.transform.parent.gameObject;
-            newChunk = Instantiate(chunk, new Vector3(-25, 0, 350), Quaternion.identity);
+            newChunk = Instantiate(eventSys.GetNextChunk(), new Vector3(-25, 0, 350), Quaternion.identity);
            
         }
     }
