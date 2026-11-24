@@ -18,9 +18,25 @@ public class LimbPlaneMovement : MonoBehaviour
     private float zyValue;
     public float depthChoiceValue;
 
+
+    public enum LimbType
+    {
+        Arm,
+        Leg
+    }
+
+    public LimbType limbType;
+
     private void Start()
     {
-        
+        if (limbType == LimbType.Leg)
+        {
+            Rigidbody rb = GetComponent<Rigidbody>();
+
+            rb.constraints =
+                RigidbodyConstraints.FreezePositionX |
+                RigidbodyConstraints.FreezePositionY;
+        }
     }
 
     private void OnEnable()
@@ -39,21 +55,29 @@ public class LimbPlaneMovement : MonoBehaviour
 
     private void Update()
     {
-        if (isPossessed)
-        {
-            xValue = xMovement.ReadValue<float>() * 20;
-            zyValue = zyMovement.ReadValue<float>() * 20;
-            depthChoiceValue = depthChoice.ReadValue<float>();
+        if (!isPossessed)
+            return;
 
-            if (depthChoiceValue == 1)
-            {
-                extremityConstForce.force = new Vector3(xValue, 0, zyValue);
-            }
-            else
-            {
-                extremityConstForce.force = new Vector3(xValue, zyValue, 0);
-            }
+        xValue = xMovement.ReadValue<float>() * 20;
+        zyValue = zyMovement.ReadValue<float>() * 20;
+        depthChoiceValue = depthChoice.ReadValue<float>();
+
+        if (limbType == LimbType.Leg)
+        {
+            // Leg can only move forward/backward
+            extremityConstForce.force = new Vector3(0, 0, zyValue);
+
+           
         }
-            
+        else if (depthChoiceValue == 1)
+        {
+            // original XY 
+            extremityConstForce.force = new Vector3(xValue, 0, zyValue);
+        }
+        else
+        {
+            // original XZ 
+            extremityConstForce.force = new Vector3(xValue, zyValue, 0);
+        }
     }
 }
