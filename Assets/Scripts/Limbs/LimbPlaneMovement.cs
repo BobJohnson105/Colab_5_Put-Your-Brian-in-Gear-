@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 
-public class LimbPlaneMovement : InputReciever
+public class LimbPlaneMovement : InputReceiver
 {
     public bool isPossessed;
 

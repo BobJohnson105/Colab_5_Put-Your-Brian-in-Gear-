@@ -10,7 +10,7 @@ public class TentacleController : MonoBehaviour
     public ConstantForce extremityConstForce;
     public Transform tentacleEndTransform;
     public BrainManager brainManager;
-    public InputReciever currentInputReciever;
+    public InputReceiver currentInputReciever;
     public int playerNumber;
 
     private float xValue;

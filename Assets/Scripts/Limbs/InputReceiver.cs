@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class InputReciever : MonoBehaviour
+public class InputReceiver : MonoBehaviour
 {
     public float xValue;
     public float zyValue;

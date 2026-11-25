@@ -4,7 +4,7 @@ public class BrainSection : MonoBehaviour
 {
     public string brainPartName;
 
-    public InputReciever partReciever;
+    public InputReceiver partReciever;
 
     public float moveUpAmount = 0.2f;
     public float moveSpeed = 8f;
