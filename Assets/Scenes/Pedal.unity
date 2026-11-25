@@ -1130,8 +1130,8 @@ HingeJoint:
   serializedVersion: 3
   m_ConnectedBody: {fileID: 0}
   m_ConnectedArticulationBody: {fileID: 0}
-  m_Anchor: {x: 0.02, y: 0.52, z: -1.87}
-  m_Axis: {x: 0, y: 0, z: -1}
+  m_Anchor: {x: 0.2, y: -0.41, z: -0.71}
+  m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 1
@@ -1148,8 +1148,8 @@ HingeJoint:
   m_ExtendedLimits: 0
   m_UseAcceleration: 0
   m_Limits:
-    min: -25
-    max: 0
+    min: -321.6815
+    max: 37.08606
     bounciness: 0
     bounceMinVelocity: 0.2
     contactDistance: 0
