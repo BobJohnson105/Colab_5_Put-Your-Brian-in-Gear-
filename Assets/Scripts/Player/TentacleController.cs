@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class TentacleController : MonoBehaviour
@@ -9,12 +10,17 @@ public class TentacleController : MonoBehaviour
     public ConstantForce extremityConstForce;
     public Transform tentacleEndTransform;
     public BrainManager brainManager;
+    public GameObject currentSection;
+    public int playerNumber;
 
     private float xValue;
     private float zyValue;
     public float depthChoiceValue;
     public float grabValue;
     public float possessValue;
+
+    public bool isLatched;
+    public bool canLatch;
 
     private void Start()
     {
@@ -23,8 +29,8 @@ public class TentacleController : MonoBehaviour
 
     public void ReadInputValues(float x, float zy, float depth, float grab, float possess)
     {
-        xValue = x * 20;
-        zyValue = zy * 20;
+        xValue = x;
+        zyValue = zy;
         depthChoiceValue = depth;
         grabValue = grab;
         possessValue = possess;
@@ -38,21 +44,48 @@ public class TentacleController : MonoBehaviour
         {
             if (hit.collider.TryGetComponent(out BrainSection brainSection))
             {
-                brainManager.ToggleSelection(brainSection.brainPartName);
+                brainManager.ToggleSelection(brainSection.brainPartName, playerNumber);
+
+                isLatched = !isLatched;
             }
         }
     }
 
     private void Update()
     {
-        if (depthChoiceValue == 1)
+        if (!isLatched)
         {
-            extremityConstForce.force = new Vector3(xValue, 0, zyValue);
+            if (depthChoiceValue == 1)
+            {
+                extremityConstForce.force = new Vector3(xValue, 0, zyValue);
+            }
+            else
+            {
+                extremityConstForce.force = new Vector3(xValue, zyValue, 0);
+            }
         }
-        else
+        
+
+        if (possessValue == 1 && canLatch)
         {
-            extremityConstForce.force = new Vector3(xValue, zyValue, 0);
+            TryPossessBrainSection();
+
+            StartCoroutine(LatchCooldown());
         }
+
+        if (isLatched)
+        {
+            
+        }
+    }
+
+    private IEnumerator LatchCooldown()
+    {
+        canLatch = false;
+
+        yield return new WaitForSeconds(1);
+
+        canLatch = true;
     }
             
     

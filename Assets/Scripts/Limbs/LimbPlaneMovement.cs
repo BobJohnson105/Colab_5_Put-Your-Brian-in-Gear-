@@ -13,6 +13,9 @@ public class LimbPlaneMovement : MonoBehaviour
     public ConstantForce extremityConstForce;
     public GrabController grabController;
 
+    public PlayerController player1;
+    public PlayerController player2;
+
     private float xValue;
     private float zyValue;
     public float depthChoiceValue;
@@ -25,6 +28,11 @@ public class LimbPlaneMovement : MonoBehaviour
 
     public void ReadInputValues(float x, float zy, float depth, float grab)
     {
+        // xValue = x * 20;
+        // zyValue = zy * 20;
+        // depthChoiceValue = depth;
+        // grabValue = grab;
+
         xValue = x * 20;
         zyValue = zy * 20;
         depthChoiceValue = depth;

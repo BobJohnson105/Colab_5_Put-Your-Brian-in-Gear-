@@ -50,7 +50,7 @@ public class BrainSection : MonoBehaviour
     {
         if (brainManager != null)
         {
-            brainManager.ToggleSelection(brainPartName);
+            //brainManager.ToggleSelection(brainPartName);
 
             isSelected = GetSelectionState();
         }

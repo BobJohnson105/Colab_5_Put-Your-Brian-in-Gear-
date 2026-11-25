@@ -29,6 +29,7 @@ public class PlayerController : MonoBehaviour
         zyMovement.Enable();
         depthChoice.Enable();
         grabInput.Enable();
+        possessInput.Enable();
     }
 
     private void OnDisable()
@@ -37,13 +38,14 @@ public class PlayerController : MonoBehaviour
         zyMovement.Disable();
         depthChoice.Disable();
         grabInput.Disable();
+        possessInput.Disable();
     }
 
     private void Update()
     {
         
-        xValue = xMovement.ReadValue<float>() * 20;
-        zyValue = zyMovement.ReadValue<float>() * 20;
+        xValue = xMovement.ReadValue<float>();
+        zyValue = zyMovement.ReadValue<float>();
 
         depthChoiceValue = depthChoice.ReadValue<float>();
         grabValue = grabInput.ReadValue<float>();

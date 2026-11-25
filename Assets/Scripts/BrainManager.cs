@@ -17,7 +17,7 @@ public class BrainManager : MonoBehaviour
 
 
 
-    public void ToggleSelection(string brainPartName)
+    public void ToggleSelection(string brainPartName, int playerNumber)
     {
         bool isSelected = false;
 
