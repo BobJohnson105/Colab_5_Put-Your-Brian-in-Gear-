@@ -7,44 +7,34 @@ public class LimbPlaneMovement : MonoBehaviour
     public bool isPossessed;
 
 
-    public InputAction xMovement;
-    public InputAction zyMovement;
-    public InputAction depthChoice;
+
 
     public int axis;
     public ConstantForce extremityConstForce;
+    public GrabController grabController;
 
     private float xValue;
     private float zyValue;
     public float depthChoiceValue;
+    public float grabValue;
 
     private void Start()
     {
         
     }
 
-    private void OnEnable()
+    public void ReadInputValues(float x, float zy, float depth, float grab)
     {
-        xMovement.Enable();
-        zyMovement.Enable();
-        depthChoice.Enable();
-    }
-
-    private void OnDisable()
-    {
-        xMovement.Disable();
-        zyMovement.Disable();
-        depthChoice.Disable();
+        xValue = x * 20;
+        zyValue = zy * 20;
+        depthChoiceValue = depth;
+        grabValue = grab;
     }
 
     private void Update()
     {
         if (isPossessed)
         {
-            xValue = xMovement.ReadValue<float>() * 20;
-            zyValue = zyMovement.ReadValue<float>() * 20;
-            depthChoiceValue = depthChoice.ReadValue<float>();
-
             if (depthChoiceValue == 1)
             {
                 extremityConstForce.force = new Vector3(xValue, 0, zyValue);
@@ -52,6 +42,11 @@ public class LimbPlaneMovement : MonoBehaviour
             else
             {
                 extremityConstForce.force = new Vector3(xValue, zyValue, 0);
+            }
+
+            if (grabController != null)
+            {
+                grabController.GetGrabInput(grabValue);
             }
         }
             
