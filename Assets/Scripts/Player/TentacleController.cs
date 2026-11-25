@@ -10,7 +10,7 @@ public class TentacleController : MonoBehaviour
     public ConstantForce extremityConstForce;
     public Transform tentacleEndTransform;
     public BrainManager brainManager;
-    public GameObject currentSection;
+    public InputReciever currentInputReciever;
     public int playerNumber;
 
     private float xValue;
@@ -42,12 +42,22 @@ public class TentacleController : MonoBehaviour
 
         if (Physics.Raycast(tentacleEndTransform.position, -transform.up, out hit, 50))
         {
+            Debug.Log(hit.collider.gameObject);
+
+           
             if (hit.collider.TryGetComponent(out BrainSection brainSection))
             {
-                brainManager.ToggleSelection(brainSection.brainPartName, playerNumber);
+                brainManager.ToggleSelection(brainSection.brainPartName);
+
+                currentInputReciever = brainSection.partReciever;
 
                 isLatched = !isLatched;
+
+                Debug.Log(brainSection.partReciever);
             }
+            
+            
+          
         }
     }
 
@@ -64,6 +74,10 @@ public class TentacleController : MonoBehaviour
                 extremityConstForce.force = new Vector3(xValue, zyValue, 0);
             }
         }
+        else
+        {
+            currentInputReciever.ReadInputValues(xValue, zyValue, depthChoiceValue, grabValue);
+        }
         
 
         if (possessValue == 1 && canLatch)
@@ -71,11 +85,6 @@ public class TentacleController : MonoBehaviour
             TryPossessBrainSection();
 
             StartCoroutine(LatchCooldown());
-        }
-
-        if (isLatched)
-        {
-            
         }
     }
 

@@ -873,6 +873,8 @@ MonoBehaviour:
   extremityConstForce: {fileID: 522130502}
   tentacleEndTransform: {fileID: 522130498}
   brainManager: {fileID: 5790102089326703289}
+  currentInputReciever: {fileID: 0}
+  playerNumber: 0
   depthChoiceValue: 0
   grabValue: 0
   possessValue: 0
@@ -1160,6 +1162,8 @@ MonoBehaviour:
   extremityConstForce: {fileID: 665175672}
   tentacleEndTransform: {fileID: 665175667}
   brainManager: {fileID: 5790102089326703289}
+  currentInputReciever: {fileID: 0}
+  playerNumber: 0
   depthChoiceValue: 0
   grabValue: 0
   possessValue: 0
@@ -2764,6 +2768,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BrainSection
   brainPartName: Speech
+  partReciever: {fileID: 1045882531}
   moveUpAmount: 0.3
   moveSpeed: 4
 --- !u!114 &4766156750297800428
@@ -2868,6 +2873,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Arm R
       objectReference: {fileID: 0}
+    - target: {fileID: 9078863068617920103, guid: 7f27b0ff907546445adb078912a1daa7, type: 3}
+      propertyPath: isPossessed
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2957,6 +2966,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BrainSection
   brainPartName: Right Arm
+  partReciever: {fileID: 6805962266849716993}
   moveUpAmount: 0.3
   moveSpeed: 4
 --- !u!4 &6308819807356265066
@@ -3005,6 +3015,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BrainSection
   brainPartName: Left Arm
+  partReciever: {fileID: 4722743646111227028}
   moveUpAmount: 0.3
   moveSpeed: 4
 --- !u!222 &6693571178157374991
@@ -3402,6 +3413,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BrainSection
   brainPartName: Right Leg
+  partReciever: {fileID: 1053837947}
   moveUpAmount: 0.3
   moveSpeed: 4
 --- !u!4 &9115540044591667736
