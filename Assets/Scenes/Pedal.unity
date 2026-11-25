@@ -354,13 +354,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 440859023}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.127, y: 3.007, z: -2.626}
+  m_LocalRotation: {x: 0.31302586, y: -0, z: -0, w: 0.94974464}
+  m_LocalPosition: {x: -0.1270001, y: 3.007, z: -2.626}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 466644125}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 36.483, y: 0, z: 0}
 --- !u!54 &440859026
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -472,7 +472,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 466644125}
-  - component: {fileID: 466644126}
   m_Layer: 0
   m_Name: pedal
   m_TagString: Untagged
@@ -497,22 +496,6 @@ Transform:
   - {fileID: 1462711600}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &466644126
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 466644124}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d6ac0c9c3e644542969c2496ec166e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PedalController
-  pedalJoint: {fileID: 1462711601}
-  restAngle: 0
-  pressedAngle: -25
-  pedalValue: 0
 --- !u!1 &482147606 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8055240018098160035, guid: b3ae8daa1158f5449a6a1c00fa26fc9c, type: 3}
@@ -1020,6 +1003,7 @@ GameObject:
   - component: {fileID: 1462711597}
   - component: {fileID: 1462711602}
   - component: {fileID: 1462711601}
+  - component: {fileID: 1462711603}
   m_Layer: 0
   m_Name: PedalPlate
   m_TagString: Untagged
@@ -1114,7 +1098,7 @@ Transform:
   m_GameObject: {fileID: 1462711596}
   serializedVersion: 2
   m_LocalRotation: {x: 0.19116895, y: -0, z: -0, w: 0.9815572}
-  m_LocalPosition: {x: -0.18, y: 3.66, z: -2.34}
+  m_LocalPosition: {x: -0.18, y: 3.751, z: -2.036}
   m_LocalScale: {x: 1.1072613, y: 1.5971311, z: 0.20899822}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1130,14 +1114,14 @@ HingeJoint:
   serializedVersion: 3
   m_ConnectedBody: {fileID: 0}
   m_ConnectedArticulationBody: {fileID: 0}
-  m_Anchor: {x: 0.2, y: -0.41, z: -0.71}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Anchor: {x: 0, y: -0.5, z: 0}
+  m_Axis: {x: -1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 1
   m_Spring:
-    spring: 100
-    damper: 5
+    spring: 0
+    damper: 0
     targetPosition: 0
   m_UseMotor: 0
   m_Motor:
@@ -1148,8 +1132,8 @@ HingeJoint:
   m_ExtendedLimits: 0
   m_UseAcceleration: 0
   m_Limits:
-    min: -321.6815
-    max: 37.08606
+    min: -35
+    max: 0
     bounciness: 0
     bounceMinVelocity: 0.2
     contactDistance: 0
@@ -1186,6 +1170,24 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1462711603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1462711596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d6ac0c9c3e644542969c2496ec166e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PedalController
+  pedalJoint: {fileID: 1462711601}
+  restAngle: 20
+  pressedAngle: -25
+  pedalValue: 0
+  pedalController: {fileID: 1462711603}
+  maxAcceleration: 100
 --- !u!1 &1497043942
 GameObject:
   m_ObjectHideFlags: 0
@@ -1292,7 +1294,7 @@ Transform:
   m_GameObject: {fileID: 1497043942}
   serializedVersion: 2
   m_LocalRotation: {x: 0.6184026, y: -0, z: -0, w: 0.78586143}
-  m_LocalPosition: {x: 2.8513203, y: -1.78, z: 2.2970002}
+  m_LocalPosition: {x: 2.8513203, y: -1.689, z: 2.601}
   m_LocalScale: {x: 1.5141, y: 1.9734, z: 0.28579}
   m_ConstrainProportionsScale: 0
   m_Children: []
