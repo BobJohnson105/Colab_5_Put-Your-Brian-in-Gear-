@@ -72,8 +72,8 @@ Material:
     - _amplitude: 1
     - _colourbrightness: 1
     - _emissionintensity: 0
-    - _fresnelpower: 1.5
-    - _normalintensity: 1
+    - _fresnelpower: 1
+    - _normalintensity: 0.001
     - _smoothness: 1
     - _speed: 1
     m_Colors:
