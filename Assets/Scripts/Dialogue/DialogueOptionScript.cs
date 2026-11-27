@@ -18,6 +18,8 @@ public class DialogueOptionScript : MonoBehaviour,  IPointerClickHandler, IPoint
     public WordData wordDataRef;
     private string currentWordNeeded;
 
+    private TextMeshProUGUI optionText;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -49,6 +51,11 @@ public class DialogueOptionScript : MonoBehaviour,  IPointerClickHandler, IPoint
         launchForce = 2f;
         tumbleForce = 0.5f;
         PushBox();
+    }
+
+    public void UpdateDialogueOption()
+    {
+        optionText.text = wordDataRef.assignedWord;
     }
 
     private IEnumerator DestroyObject()
