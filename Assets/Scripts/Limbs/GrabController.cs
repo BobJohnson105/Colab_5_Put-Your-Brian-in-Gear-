@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public class GrabController : MonoBehaviour
 {
-    public InputAction grabInput;
+
 
     public Transform handPos;
     public Transform holdTransform;
@@ -17,20 +17,15 @@ public class GrabController : MonoBehaviour
 
     private ConfigurableJoint objectGrabJoint;
 
-    private void OnEnable()
+    public void GetGrabInput(float grabInput)
     {
-        grabInput.Enable();
+        grabValue = grabInput;
     }
 
-    private void OnDisable()
-    {
-        grabInput.Disable();
-    }
+
 
     private void Update()
     {
-        grabValue = grabInput.ReadValue<float>();
-
         if (grabValue != 0)
         {
             if (!hasGrabbed)

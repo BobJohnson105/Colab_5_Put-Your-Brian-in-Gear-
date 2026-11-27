@@ -2,56 +2,21 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 
-public class LimbPlaneMovement : MonoBehaviour
+public class LimbPlaneMovement : InputReceiver
 {
     public bool isPossessed;
 
 
-    public InputAction xMovement;
-    public InputAction zyMovement;
-    public InputAction depthChoice;
 
-    public int axis;
+
+
     public ConstantForce extremityConstForce;
+    public GrabController grabController;
 
-    private float xValue;
-    private float zyValue;
-    public float depthChoiceValue;
+    public PlayerController player1;
+    public PlayerController player2;
 
-
-    public enum LimbType
-    {
-        Arm,
-        Leg
-    }
-
-    public LimbType limbType;
-
-    private void Start()
-    {
-        if (limbType == LimbType.Leg)
-        {
-            Rigidbody rb = GetComponent<Rigidbody>();
-
-            rb.constraints =
-                RigidbodyConstraints.FreezePositionX |
-                RigidbodyConstraints.FreezePositionY;
-        }
-    }
-
-    private void OnEnable()
-    {
-        xMovement.Enable();
-        zyMovement.Enable();
-        depthChoice.Enable();
-    }
-
-    private void OnDisable()
-    {
-        xMovement.Disable();
-        zyMovement.Disable();
-        depthChoice.Disable();
-    }
+    
 
     private void Update()
     {

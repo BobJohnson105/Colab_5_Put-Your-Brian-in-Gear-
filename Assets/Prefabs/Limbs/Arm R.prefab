@@ -410,7 +410,7 @@ ConfigurableJoint:
   m_ConnectedBody: {fileID: 4677226754304833620}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 1.0000001, z: 0}
-  m_Axis: {x: -1, y: 0, z: 0}
+  m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_SecondaryAxis: {x: 0, y: 1, z: 0}
@@ -431,11 +431,11 @@ ConfigurableJoint:
     spring: 0
     damper: 0
   m_LowAngularXLimit:
-    limit: -150
+    limit: 0
     bounciness: 0
     contactDistance: 0
   m_HighAngularXLimit:
-    limit: 0
+    limit: 120
     bounciness: 1
     contactDistance: 0
   m_AngularYZLimitSpring:
@@ -501,6 +501,37 @@ ConfigurableJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!1 &2115432262169962705
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3648899377584417519}
+  m_Layer: 0
+  m_Name: Hold Transform
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3648899377584417519
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2115432262169962705}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.791, y: 0.615, z: 0.289}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 9189188829928291578}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2264444043580337822
 GameObject:
   m_ObjectHideFlags: 0
@@ -645,7 +676,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2842699374885601364}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.9917239, y: 0.04424209, z: -0.118189245, w: -0.023615416}
+  m_LocalRotation: {x: 0.56617904, y: 0.011484006, z: -0.82275534, w: -0.048817705}
   m_LocalPosition: {x: -0.035518378, y: -1.2186859, z: 0.020094275}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -655,8 +686,9 @@ Transform:
   - {fileID: 6663097975869502659}
   - {fileID: 8558213665216255849}
   - {fileID: 1172131060783315477}
+  - {fileID: 3648899377584417519}
   m_Father: {fileID: 663061033696131036}
-  m_LocalEulerAnglesHint: {x: -2.085, y: 193.69, z: 174.641}
+  m_LocalEulerAnglesHint: {x: -2.085, y: 291.03, z: 174.641}
 --- !u!33 &5832889534732527306
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1228,6 +1260,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6847245177059672445}
   - component: {fileID: 9078863068617920103}
+  - component: {fileID: 8854004474681275880}
   m_Layer: 0
   m_Name: Arm R
   m_TagString: Untagged
@@ -1243,8 +1276,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8226804667289323731}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 3, y: -8.61, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1263,7 +1296,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd973f73461fb934ab2b67570e0bd92e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HandPlaneMovement
-  isPossessed: 0
+  isPossessed: 1
   xMovement:
     m_Name: X Movement
     m_Type: 0
@@ -1350,6 +1383,38 @@ MonoBehaviour:
   axis: 0
   extremityConstForce: {fileID: 5139871697256471425}
   depthChoiceValue: 0
+--- !u!114 &8854004474681275880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8226804667289323731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4eb32dd1d32677847a7218ab0424d0c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GrabController
+  grabInput:
+    m_Name: Grab Input
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 9c61dff2-2199-41d6-859e-06cd8de36981
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: a403b4c7-737e-4649-96ca-37d4cbfb9e70
+      m_Path: <Keyboard>/e
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Grab Input
+      m_Flags: 0
+    m_Flags: 0
+  handPos: {fileID: 9189188829928291578}
+  holdTransform: {fileID: 3648899377584417519}
+  limbMover: {fileID: 9078863068617920103}
 --- !u!1 &9139987961824979335
 GameObject:
   m_ObjectHideFlags: 0

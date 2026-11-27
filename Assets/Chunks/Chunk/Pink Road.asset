@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Pink Road
   m_EditorClassIdentifier: Assembly-CSharp::ChunkData
   chunkName: Pink Road
-  chunk: {fileID: 5927952721372400478, guid: 4b13a1c3382ab1c429a5d547987c9400, type: 3}
+  chunk: {fileID: 6610882904710283527, guid: ed0252fcbf116094d820b330a593ab66, type: 3}
