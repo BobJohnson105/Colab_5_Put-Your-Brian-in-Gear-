@@ -67,11 +67,11 @@ public class TentacleController : MonoBehaviour
         {
             if (depthChoiceValue == 1)
             {
-                extremityConstForce.force = new Vector3(xValue, 0, zyValue);
+                extremityConstForce.force = new Vector3(xValue * 5, 0, zyValue * 5);
             }
             else
             {
-                extremityConstForce.force = new Vector3(xValue, zyValue, 0);
+                extremityConstForce.force = new Vector3(xValue * 5, zyValue * 5, 0);
             }
         }
         else
