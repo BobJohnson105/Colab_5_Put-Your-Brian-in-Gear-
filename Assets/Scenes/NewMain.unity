@@ -263,8 +263,7 @@ Transform:
   m_LocalPosition: {x: 0, y: -5.62, z: -1.36}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 591996279}
+  m_Children: []
   m_Father: {fileID: 1050464430}
   m_LocalEulerAnglesHint: {x: 20, y: 0, z: 0}
 --- !u!114 &321130689
@@ -366,6 +365,7 @@ MonoBehaviour:
   speed: 50
   yaw: 0
   yawSpeed: 10
+  rotateSpeed: 10
   steeringWheel: {fileID: 1916746454}
 --- !u!114 &324141445
 MonoBehaviour:
@@ -909,12 +909,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 591996278}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.57357645, z: 0.8191521, w: 0}
-  m_LocalPosition: {x: 0, y: 323.32733, z: 248.77872}
-  m_LocalScale: {x: 213.42258, y: 23.764055, z: 57.07135}
+  m_LocalRotation: {x: -0, y: -0.70710677, z: 0.7071068, w: 0}
+  m_LocalPosition: {x: 0, y: 228.57999, z: 343}
+  m_LocalScale: {x: 213.42273, y: 23.764067, z: 57.07137}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 321130688}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 90, y: -90, z: 90}
 --- !u!23 &591996281
 MeshRenderer:
@@ -3586,3 +3586,4 @@ SceneRoots:
   - {fileID: 612607112}
   - {fileID: 1310336783}
   - {fileID: 1024087209}
+  - {fileID: 591996279}
