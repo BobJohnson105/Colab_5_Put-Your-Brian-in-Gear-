@@ -2695,6 +2695,10 @@ PrefabInstance:
       propertyPath: isPossessed
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 28731347902938467, guid: 7a3e98c58b742304498002d7e4513184, type: 3}
+      propertyPath: grabController
+      value: 
+      objectReference: {fileID: 4722743646111227029}
     - target: {fileID: 6704947657638305200, guid: 7a3e98c58b742304498002d7e4513184, type: 3}
       propertyPath: m_Name
       value: Arm L
@@ -2755,6 +2759,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd973f73461fb934ab2b67570e0bd92e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HandPlaneMovement
+--- !u!114 &4722743646111227029 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -3524970090588713180, guid: 7a3e98c58b742304498002d7e4513184, type: 3}
+  m_PrefabInstance: {fileID: 4722743646111227027}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4eb32dd1d32677847a7218ab0424d0c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GrabController
 --- !u!114 &4758104829084542944
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2877,6 +2892,10 @@ PrefabInstance:
       propertyPath: isPossessed
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9078863068617920103, guid: 7f27b0ff907546445adb078912a1daa7, type: 3}
+      propertyPath: grabController
+      value: 
+      objectReference: {fileID: 6805962266849716994}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3057,6 +3076,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd973f73461fb934ab2b67570e0bd92e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HandPlaneMovement
+--- !u!114 &6805962266849716994 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8854004474681275880, guid: 7f27b0ff907546445adb078912a1daa7, type: 3}
+  m_PrefabInstance: {fileID: 5169648919888556895}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4eb32dd1d32677847a7218ab0424d0c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GrabController
 --- !u!222 &6831365656379385632
 CanvasRenderer:
   m_ObjectHideFlags: 0
