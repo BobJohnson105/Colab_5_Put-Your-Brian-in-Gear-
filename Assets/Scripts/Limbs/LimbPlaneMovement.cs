@@ -20,22 +20,24 @@ public class LimbPlaneMovement : InputReceiver
 
     private void Update()
     {
-        if (!isPossessed)
+        if (isPossessed)
+        {
 
 
-        if (depthChoiceValue == 1)
-        {
-            // original XY 
-            extremityConstForce.force = new Vector3(xValue, 0, zyValue);
-        }
-        else
-        {
-            // original XZ 
-            extremityConstForce.force = new Vector3(xValue, zyValue, 0);
-        }
-        if(grabController != null)
-        {
-            grabController.GetGrabInput(grabValue);
+            if (depthChoiceValue == 1)
+            {
+                // original XY 
+                extremityConstForce.force = new Vector3(xValue, 0, zyValue);
+            }
+            else
+            {
+                // original XZ 
+                extremityConstForce.force = new Vector3(xValue, zyValue, 0);
+            }
+            if (grabController != null)
+            {
+                grabController.GetGrabInput(grabValue);
+            }
         }
     }
 }

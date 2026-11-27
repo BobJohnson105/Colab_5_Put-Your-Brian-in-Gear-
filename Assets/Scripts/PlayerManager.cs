@@ -9,6 +9,7 @@ public class PlayerManager : MonoBehaviour
 
     public float yaw;
     public float yawSpeed;
+    public float rotateSpeed;
 
     public SteeringWheel steeringWheel;
 
@@ -27,7 +28,9 @@ public class PlayerManager : MonoBehaviour
 
     private void Update()
     {
+
         yaw = Mathf.Clamp(yaw, -1, 1);
+        transform.Rotate(0, yaw * Time.deltaTime * rotateSpeed, 0);
         yaw = steeringWheel.steeringValue;
         transform.position += new Vector3(yaw * yawSpeed, 0, 0) * Time.deltaTime;
     }
