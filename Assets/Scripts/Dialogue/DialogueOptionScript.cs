@@ -18,7 +18,7 @@ public class DialogueOptionScript : MonoBehaviour,  IPointerClickHandler, IPoint
     public WordData wordDataRef;
     private string currentWordNeeded;
 
-    private TextMeshProUGUI optionText;
+    public TextMeshPro optionText;
 
     private void Awake()
     {
@@ -55,6 +55,7 @@ public class DialogueOptionScript : MonoBehaviour,  IPointerClickHandler, IPoint
 
     public void UpdateDialogueOption()
     {
+        
         optionText.text = wordDataRef.assignedWord;
     }
 
