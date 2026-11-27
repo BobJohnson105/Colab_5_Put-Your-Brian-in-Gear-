@@ -2,49 +2,26 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 
-public class LimbPlaneMovement : MonoBehaviour
+public class LimbPlaneMovement : InputReceiver
 {
     public bool isPossessed;
 
 
-    public InputAction xMovement;
-    public InputAction zyMovement;
-    public InputAction depthChoice;
 
-    public int axis;
+
+
     public ConstantForce extremityConstForce;
+    public GrabController grabController;
 
-    private float xValue;
-    private float zyValue;
-    public float depthChoiceValue;
+    public PlayerController player1;
+    public PlayerController player2;
 
-    private void Start()
-    {
-        
-    }
-
-    private void OnEnable()
-    {
-        xMovement.Enable();
-        zyMovement.Enable();
-        depthChoice.Enable();
-    }
-
-    private void OnDisable()
-    {
-        xMovement.Disable();
-        zyMovement.Disable();
-        depthChoice.Disable();
-    }
+    
 
     private void Update()
     {
         if (isPossessed)
         {
-            xValue = xMovement.ReadValue<float>() * 20;
-            zyValue = zyMovement.ReadValue<float>() * 20;
-            depthChoiceValue = depthChoice.ReadValue<float>();
-
             if (depthChoiceValue == 1)
             {
                 extremityConstForce.force = new Vector3(xValue, 0, zyValue);
@@ -52,6 +29,11 @@ public class LimbPlaneMovement : MonoBehaviour
             else
             {
                 extremityConstForce.force = new Vector3(xValue, zyValue, 0);
+            }
+
+            if (grabController != null)
+            {
+                grabController.GetGrabInput(grabValue);
             }
         }
             
