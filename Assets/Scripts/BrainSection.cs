@@ -4,6 +4,8 @@ public class BrainSection : MonoBehaviour
 {
     public string brainPartName;
 
+    public InputReceiver partReciever;
+
     public float moveUpAmount = 0.2f;
     public float moveSpeed = 8f;
 
@@ -50,7 +52,7 @@ public class BrainSection : MonoBehaviour
     {
         if (brainManager != null)
         {
-            brainManager.ToggleSelection(brainPartName);
+            //brainManager.ToggleSelection(brainPartName);
 
             isSelected = GetSelectionState();
         }
